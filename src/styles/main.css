@@ -1,0 +1,547 @@
+@import url('https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600;700&display=swap');
+
+:root{
+  --primary-color: rgba(7,7,7,0.92);
+  --secondary-color: #28292E;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Laila', sans-serif;
+  background: #4A4B50;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+header {
+  padding: 1em;
+  background: var(--primary-color);
+}
+
+header .container {
+  display: flex;
+  place-content: space-between;
+}
+
+header .logo {
+  margin-left: 1.2em;
+  font-weight: 600;
+  font-size: 1.2em;
+  position: relative;
+}
+
+header .logo::before{
+  content: '';
+  position: absolute;
+  left: -1.2em;
+  width: 20px;
+  height: 20px;
+  background-image: url("/icons/restaurant_logo.svg");
+  background-size: contain;
+  margin-top: .15em;
+}
+
+nav { 
+  display: none;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  top: 0;
+  right: 0;
+  background: var(--primary-color);
+  height: 100vh;
+  padding: 1em;
+  
+}
+
+nav ul.primary-nav {
+  text-align: center;
+  margin-top: 5em;
+}
+
+nav li a {
+    display: block;
+    height: 44px;
+    line-height: 44px;
+    margin: 2em 0;
+}
+
+nav li a:hover {
+  font-weight: bold;
+}
+
+nav.menu-btn {
+  display: block;
+}
+
+
+
+.mobile-menu {
+  outline: none;
+  border: none;
+  background: unset;
+
+}
+
+.mobile-menu img {
+  width: 44px;
+  height: 44px;
+}
+
+nav .mobile-menu-exit {
+  position: absolute;
+  right: 1em;
+  outline: none;
+  border: none;
+  background: unset;
+}
+
+nav .mobile-menu-exit img {
+  width: 44px;
+  height: 44px;
+}
+
+section {
+  padding: 4em 2em;
+}
+
+section.hero {
+  background: url("/images/heros/hero-image_3.jpg") var(--primary-color);
+  background-position: bottom;
+  color: white;
+  padding: 4em 2em 6em 2em;
+}
+
+.hero .left-col h1 {
+  font-size: 2.5em;
+  line-height: 1.3em;
+  margin-bottom: 1em;
+}
+
+.hero .left-col p {
+  font-size: .9rem;
+}
+
+.hero .hero-img {
+  display: none;
+}
+
+.hero .hero-cta{
+  margin-top: 1em;
+  background: rgba(196,196,196, .15);
+  display: inline-block;
+  padding: .6em 2.8em;
+}
+
+.skip-content-cta {
+  left: 50%;
+  position: absolute;
+  transform: translateY(-100%);
+  color: white;
+  z-index: 100;
+  background: rgba(196,196,196, .15);
+  display: inline-block;
+  padding: .6em 2.8em;
+  transition: transform 0.3s;
+}
+
+.skip-content-cta:focus {
+   transform: translateY(0%);
+}
+
+.hero .hero-cta a {
+  margin-left: -2em;
+  position: relative;
+  display: inline-block;
+  height: 44px;
+  line-height: 44px;
+}
+
+.hero .hero-cta a::after {
+  content: '';
+  position: absolute;
+  right: -2.2em;
+  width: 30px;
+  height: 44px;
+  top: .5em;
+  background-image: url("/icons/arrow.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-top: .6em;
+}
+
+section.services {
+  background: url("/images/heros/hero-image_4.jpg") var(--secondary-color);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.services ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(19em, 1fr));
+  gap: 10px;
+}
+
+.restaurant, .services li {
+  background: var(--secondary-color);
+  padding-top: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+.services li:first-child {
+  margin-bottom: 1em;
+}
+
+.restaurant h2, .services li h2 {
+  padding: 0 1em;
+
+}
+
+.restaurant p, .restaurant span, .services li p {
+  padding: 0 1.6em;
+}
+
+.restaurant img, .services li img {
+  margin-top: 1em;
+  width: 100%;
+  align-self: flex-end;
+  height: 100%;
+}
+
+.restaurant__not__found {
+  margin-top: 5em;
+}
+
+.restaurant {
+  
+  text-align: left;
+  margin: 1em 0;
+}
+
+.restaurant .restaurant-detail {
+  margin: .5em 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.restaurant h2 a {
+  display: block;
+  height: 44px;
+}
+
+section.restaurants {
+  color: white;
+}
+
+.restaurants ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(19em ,1fr));
+  gap: 10px;
+}
+
+.restaurants .container {
+  text-align: center;
+}
+
+.restaurants p, .restaurant span {
+  opacity: .79;
+}
+
+#back-cta {
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  z-index: 99;
+
+  background-color: var(--primary-color);
+  outline: none;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/*
+   Like
+*/
+.like {
+    font-size: 18px;
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    background-color: #db0000;
+    color: white;
+    border: 0;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+footer {
+  background: var(--secondary-color);
+  padding: 2em 1em;
+  text-align: center;
+  color: white;
+}
+
+/* restaurant detail */
+
+#restaurant {
+  background: var(--secondary-color);
+  display: flex;
+  flex-direction: column;
+  color: white;
+}
+
+#restaurant .container {
+  position: relative;
+  padding: 0 1em;
+}
+
+#restaurant .address, #restaurant .description {
+  opacity: .79;
+}
+
+#restaurant h1 {
+  margin-top: .6em;
+}
+
+#restaurant .title {
+  display: block;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: .5em 0 .2em 0;
+}
+
+#restaurant img {
+  margin-top: 0;
+  width: 100%;
+}
+
+#restaurant .rating {
+  display: flex;
+}
+
+#restaurant .rating img {
+  width: 24px;
+  height: 24px;
+  margin-right: .6em;
+}
+
+#restaurant .categories ul {
+  display: flex;
+}
+
+#restaurant .categories li {
+  padding: .2em 1.5em;
+  background: #4A4B50;
+  border-radius: 20px;
+  margin-right: .8em;
+}
+
+.reviews {
+  margin-top: 1em;
+}
+
+#restaurant .reviews li {
+  display: flex;
+  margin: .8em 0;
+}
+
+.reviews li p, .reviews .date {
+  opacity: .79;
+  display: block;
+}
+
+.reviews .date {
+  margin-bottom: .5em;
+}
+
+#restaurant .reviews img {
+  width: 60px;
+  height: 60px;
+  align-self: center;
+  margin-right: 1em;
+}
+
+#modal-cta {
+  position: absolute;
+  top: -1.5em;
+  right: 1em;
+  width: 50px;
+  height: 50px;
+  background-color: #4A4B50;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+}
+
+#modal-cta img {
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+
+#modal-cta:hover {
+  background-color: var(--secondary-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.modal {
+  display: none;
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+/* Modal Content/Box */
+.modal-content {
+  position: relative;
+  background-color: var(--secondary-color);
+  margin: 3em auto;
+  padding: 20px;
+  border-radius: 5px;
+  width: 95%; 
+  color: white;
+}
+
+.modal-content ul li{
+  opacity: 0.79;
+}
+
+#modal-exit {
+  position: absolute;
+  top: 0.5em;
+  right: 1em;
+  background-color: #4A4B50;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+}
+
+#modal-exit img {
+  display: block;
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+
+.modal-content h2 {
+  text-align: center;
+}
+
+@media only screen and (min-width: 685px) {
+  .mobile-menu, .mobile-menu-exit {
+    display: none;
+  }
+
+  header .container {
+    display: grid;
+    grid-template-columns: 180px auto;
+  }
+
+  header .logo {
+    margin-left: 2em;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    background: none;
+    position: unset;
+    height: auto;
+    padding: 0;
+    width: 100%;
+  }
+
+  nav ul {
+    display: flex;
+  }
+
+  nav li a {
+    font-size: 1em;
+    padding: .1em 1em;
+    margin:0
+  }
+
+  nav ul.primary-nav {
+    margin: 0;
+  }
+
+  .hero .left-col p {
+    font-size: 1.2em;
+    width: 60%;
+  }
+
+  #back-cta {
+    right: 2em;
+    bottom: 2em;
+  }
+}
+
+@media only screen and (min-width: 1080px) {
+  .container {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  .hero .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .hero .left-col p {
+    font-size: 1.2em;
+    width: 90%;
+  }
+
+  .hero .hero-img {
+    display: block;
+    width: 35%;
+    height: 30vh;
+    object-fit: cover;
+    margin-left: 1em;
+  }
+
+  .modal-content {
+      width: 50%;
+  }
+}
+
+
+
