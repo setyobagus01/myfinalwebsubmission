@@ -20,8 +20,7 @@ const RestaurantCatalogue = {
                         <a href="#restaurants">Our Restaurant</a>
                     </div>
                 </div>
-        
-                <img class="hero-img" src="./images/heros/hero-image_4.jpg" alt="Restaurant Main Picture">
+                <img class="hero-img lazyload" data-src="./images/heros/hero-image_4.jpg" alt="Restaurant Main Picture">
             </div>
         </section>
         
@@ -31,12 +30,18 @@ const RestaurantCatalogue = {
                     <li>
                         <h2>Chef</h2>
                         <p>We provide the best chef in the universe</p>
-                        <img src="./images/heros/hero-image_1.jpg" alt="Restaurant Chef">
+                        <picture>
+                            <source media="(max-width: 600px)" srcset="./images/heros/hero-image_1-small.jpg">
+                            <img class="lazyload" data-src="./images/heros/hero-image_1-large.jpg" alt="Restaurant Chef">
+                        </picture>
                     </li>
                     <li>
                         <h2>Food</h2>
                         <p>We provide the best foodin the universe</p>
-                        <img src="./images/heros/hero-image_2.jpg" alt="Restaurant Food">
+                        <picture>
+                            <source media="(max-width: 600px)" srcset="./images/heros/hero-image_2-small.jpg">
+                            <img class="lazyload" data-src="./images/heros/hero-image_2-large.jpg" alt="Restaurant Food">
+                        </picture>
                     </li>
                 </ul>
         
